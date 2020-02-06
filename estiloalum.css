@@ -1,0 +1,28 @@
+body{
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-image: url('https://infovideopub.com/wp-content/uploads/2016/09/fondo.jpg');
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+input[type=submit], 
+input[type=button]{
+    background-color: rgb(245, 95, 8);
+    color: #FFF;
+    text-transform: uppercase;
+    height: 30px;
+    width: auto;
+    font-weight: bolder;
+}
+input[type=text]:valid, 
+textarea:valid,
+input[type=date]:valid{
+    background-color: rgb(235, 97, 17);
+}
+.fondo{
+    max-width: 450px;
+    height: auto;
+    background-color: rgb(74, 66,0.445);
+    margin: 5% auto;
+    padding-bottom: 1rem;
+}
