@@ -1,30 +1,38 @@
 document.addEventListener("DOMContentLoaded", (event)=>{
-    const formAlumnos = document.querySelector("#frmAlumnos");
-formAlumnos.addEventListener("submit", (e)=>{
+    const frmAlumnos = document.querySelector("#frmAlumnos");
+frmAlumnos.addEventListener("submit", (e)=>{
     e.preventDefault();
-    let codigo = document.querySelector("#txtCodigoAlumno").value,
-        nonbre = document.querySelector("#txtNombreAlumno").value,
+    let
+        codigo = document.querySelector("#txtCodigoAlumno").value,
+        nombre = document.querySelector("#txtNombreAlumno").value,
         direccion = document.querySelector("#txtDireccionAlumno").value,
         telefono = document.querySelector("#txtTelefonoAlumno").value;
+
+        var keycodigo = "codigo"+codigo;
+        var keynombre ="nombre"+codigo;
+        var keydireccion = "direccion"+codigo;
+        var keytelefono ="telefono"+codigo;
     if('localStorage' in window ){
-        window.localStorage.setItem("codigo", codigo);
-        window.localStorage.setItem("nombre", nombre);
-        window.localStorage.setItem("direccion", direccion);
-        window.localStorage.setItem("telefono", telefono);
+        window.localStorage.setItem(keycodigo, codigo);
+        window.localStorage.setItem(keynombre, nombre);
+        window.localStorage.setItem( keydireccion, direccion);
+        window.localStorage.setItem(keytelefono, telefono);
+
+        
     }else{
         alert('almacenamiento en local NO soportado!!! Actualizate!');
     }
 });
-document.querySelector("#btnRecuperarAlumnos").addEventListener("click", (e)=>{
+document.querySelector("#btnRecuperarAlumno").addEventListener("click", (e)=>{
     if('localStorage' in window){
         document.querySelector("#txtCodigoAlumno").value =
         window.localStorage.getItem("codigo");
         document.querySelector("#txtNombreAlumno").value =
-        window.localStorage.getItem("codigo");
+        window.localStorage.getItem("nombre");
         document.querySelector("#txtTelefonoAlumno").value =
-        window.localStorage.getItem("codigo");
+        window.localStorage.getItem("telefono");
         document.querySelector("#txtDireccionAlumno").value =
-        window.localStorage.getItem("codigo");
+        window.localStorage.getItem("direccion");
         
     }
 });
