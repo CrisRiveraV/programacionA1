@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor Divisas</title>
+</head>
+<body>
+
+    <div class="contenerdor">
+        <form method ="POST" id="frmconversores"></form>
+    </div>
+    <div class= "row row-cols-4 p-2"> 
+    <div class="col"> 
+    <select id="opciones" onchange="selectbox()" class="form-control">
+    <option value="disable selected">Seleccionar</option>
+    <option value="monedas">Monedas</option>
+    <option value="Longitud">Longitud</option>
+    </select>
+    </div>
+    </div>
+    <br><br>
+
+   <div class="row row-cols-4 p-2"> 
+   <div class ="col"> 
+    <select id="cboDe" onchange="selectbox()" class="form-control">De:</select>
+
+    <select id="cboA" onchange="selectbox()" class="form-control">A:</select>
+    </div>
+    </div>
+    <br><br>
+
+    <div class ="row row-cols-4 p-2"> 
+    <div class ="col text-center">
+    <input id="txtvalores" types="text" required="required" placeholder="valor a convertir" autofocus pattern="[0,9.]{1,}">
+    </div>
+    <br><br> 
+    <div class="col text-center" ></div>
+    <p class="bg-success text-white" id="lblresp">Respuesta: </p>
+</div>
+    <div class="col text-center">
+        <input type="submit" id="btnCalcular" value="Calcular" class="btn btn-primary">
+    </div>
+    
+</body>
+</html>
+          
