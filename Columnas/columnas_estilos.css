@@ -30,10 +30,11 @@
 .c1, .c2, .c3{
     width: 100%;
 }
+/* el oreder da el orden de prioridad a cada segmento*/
 @media(min-width: 600px){
     .c1{
         width: 60%;
-        order: 2;
+        order: 2; 
     }
     .c2{
         width: 40%;
