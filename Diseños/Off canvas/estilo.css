@@ -40,3 +40,16 @@ z-index: 1;
     background-color: #b4d2f7;
     left: 100%;
 }
+.c1 .open{
+    transform: translate(0,0);
+}
+.c3.open{
+    transform: translate(-250px,0);
+}
+
+@media (min-width:600px){
+    .container{
+        display: flex;
+    
+    }
+}
