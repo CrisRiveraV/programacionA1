@@ -31,20 +31,24 @@ class alumno{
         if( empty($this->datos['direccion']) ){
             $this->respuesta['msg'] = 'Por favor ingrese la direccion del estudiante';
         }
+        if( empty($this->datos['telefono']) ){
+            $this->respuesta['msg'] = 'Por favor ingrese el telefono del estudiante'
+        }
         $this->almacenar_alumno();
     }
+
     private function almacenar_alumno(){
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                INSERT INTO alumnos (codigo, nombre, direccion, telefono) VALUES(
+                INSERT INTO alumno (codigo, nombre, direccion, telefono) VALUES(
                     "'. $this->datos['codigo'] .'",
                     "'. $this->datos['nombre'] .'",
                     "'. $this->datos['direccion'] .'",
                     "'. $this->datos['telefono'] .'"
                     )
                 ');
-                $this->respuesta['msg'] = 'Registro inssertado correctamente';
+                $this->respuesta['msg'] = 'Registro insertado correctamente';
             }
         }
     }
