@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/css/estilos.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>APP Academica</title>
 </head>
@@ -16,10 +17,12 @@
                     <a class="nav-link" href="#">INICIO<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mostrar-alumnos" data-modulo="alumnos" href="#">Alumnos</a>
+                    <a class="nav-link mostrar-alumnos" data-modulo="alumnos" data-form="alumnos" href="#">Alumnos</a>
+                    <a class="nav-link mostrar-alumnos" data-modulo="alumnos" data-form="alumnos" href="#">Alumnos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mostrar-docentes" data-modulo="alumnos" href="#">Docentes</a>
+                    <a class="nav-link mostrar-docentes" data-modulo="docentes" href="#">Docentes</a>
+                    <a class="nav-link mostrar-docentes" data-modulo="docentes" data-form="docentes" href="#">Docentes</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link mostrar-materias" data-modulo="materias" href="#">Materias</a>
@@ -43,7 +46,15 @@
         <div id="vista-matricula"></div>
         <div id="vista-inscripcion"></div>
         <div id="vista-notas"></div>
+        <div class="modulos" id="vista-alumnos"></div>
+        <div class="modulos" id="vista-buscar-alumnos"></div>
+        <div class="modulos" id="vista-docentes"></div>
+        <div class="modulos" id="vista-materias"></div>
+        <div class="modulos" id="vista-matricula"></div>
+        <div class="modulos" id="vista-inscripcion"></div>
+        <div class="modulos" id="vista-notas"></div>
     </div>
     <script src="public/js/app.js"></script>
+    <script type="module" src="public/js/app.js"></script>
 </body>
 </html>
