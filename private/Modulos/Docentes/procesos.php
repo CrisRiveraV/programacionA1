@@ -1,6 +1,6 @@
 <?php
 include('../../Config/Config.php');
-$docente = new docente($conexion);
+$docente = new docente($Conexion);
 
 $proceso ='';
 if( isset($_GET['proceso']) && strlen($_GET['proceso'])>0 ){

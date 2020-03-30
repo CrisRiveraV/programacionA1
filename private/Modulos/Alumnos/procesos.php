@@ -1,6 +1,6 @@
 <?php
 include ('../../Config/Config.php');
-$alumno = new alumno($conexion);
+$alumno = new alumno($Conexion);
 
 $proceso ='';
 if( isset($_GET['proceso']) && strlen($_GET['proceso'])>0 ){
@@ -40,7 +40,7 @@ class alumno{
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                 INSERT INTO alumnos (codigo, nombre,     direccion, telefono) VALUES(
+                 INSERT INTO alumnos (codigo, nombre, direccion, telefono) VALUES(
                     "'. $this->datos['codigo'] .'",
                     "'. $this->datos['nombre'] .'",
                     "'. $this->datos['direccion'] .'",
