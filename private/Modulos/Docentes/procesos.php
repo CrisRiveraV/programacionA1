@@ -13,6 +13,10 @@ class docente{
     private $datos= array(), $db;
     public $respuesta = ['msg'=>'correcto'];
 
+    public function __construct($db){
+        $this->db=$db;
+    }
+
     public function recibirDatos($docente){
         $this->datos = json_decode($docente, true);
         $this->validar_datos();
