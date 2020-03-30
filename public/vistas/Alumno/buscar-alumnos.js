@@ -18,7 +18,7 @@ export function modulo(){
         });
     };
     let traerDatos = (valor)=>{
-        fetch(`private/ModulosAlumnos/procesos.php?proceso=buscarAlumno&alumno=${valor}`).then(resp=>resp.json()).then(resp=>{
+        fetch(`private/Modulos/Alumnos/procesos.php?proceso=buscarAlumno&alumno=${valor}`).then(resp=>resp.json()).then(resp=>{
           let filas = '';
             resp.forEach(alumno => {
                 filas += `  

@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-</head>
-<body>
-    
-
-<form id="frmDocentes" method="POST">
+<form data-accion="nuevo" data-idDocente='' id="frmdocentes" method="POST">
     <div class="card text-white bg-dark mb-3" style="max-width: 24rem;">
         <div class="card-header">
             Mantenimiento Docentes
@@ -36,6 +26,14 @@
             </div>
             <div class="row p-2">
                 <div class="col-4">
+                    NIT
+                </div>
+                <div class="col-6">
+                    <input type="text" id="txtNITDocente" placeholder="NIT" class="from-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
                     DIRECCION
                 </div>
                 <div class="col-8">
@@ -54,6 +52,7 @@
                 <div class="col.12 text-center">
                     <input id="btnGuardarDocente" type="submit" class="btn btn-outline-primary text-white" value="Guardar">
                     <input type="reset" class="btn btn-outline-warning text-white" value="Limpiar"> 
+                    <input type="button" class="btn btn-outline-success mostrar-buscar-docentes text-white" data-modulo="docentes" data-form="buscar-docentes" value="Buscar">
                 </div>
             </div>
             <div class="row p-2">
@@ -64,5 +63,3 @@
         </div>
     </div>
 </form>
-</body>
-</html>

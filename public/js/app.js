@@ -14,7 +14,7 @@ function init(){
                 $(`#vista-${form}`).innerHTML = resp;
 
                 let btnCerrar = $(`#btn-close-${form}`);
-                btnCerrar.addEventListener("click", event=>{
+                btnCerrar.addEventListener("click",event=>{
                     $(`#vista-${form}`).innerHTML = "";
                 });
 
