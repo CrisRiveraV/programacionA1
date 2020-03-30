@@ -1,5 +1,4 @@
 <?php
-
 include ('../../Config/Config.php');
 $alumno = new alumno($conexion);
 
@@ -7,7 +6,7 @@ $proceso ='';
 if( isset($_GET['proceso']) && strlen($_GET['proceso'])>0 ){
  $proceso =$_GET['proceso'];   
 }
-$alumno->$proceso($_GET['alumno']);
+$alumno->$proceso($_GET['alumno'] );
 print_r(json_encode($alumno->respuesta));
 
 class alumno{
@@ -41,7 +40,7 @@ class alumno{
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                INSERT INTO alumno (codigo, nombre, direccion, telefono) VALUES(
+                 INSERT INTO alumnos (codigo, nombre,     direccion, telefono) VALUES(
                     "'. $this->datos['codigo'] .'",
                     "'. $this->datos['nombre'] .'",
                     "'. $this->datos['direccion'] .'",
@@ -65,13 +64,13 @@ class alumno{
     
     public function buscarAlumno($valor=''){
         $this->db->consultas('
-        SELECT alumnos.idAlumno, alumnos.codigo, alumnos.nombre, alumnos.direccion, alumnos.telefono
-        FROM alumnos
-        WHERE alumnos.codigo like "%'.$valor.'%" or alumnos.nombre like "%' .$valor. '%"
+         SELECT alumnos.idAlumno, alumnos.codigo, alumnos.nombre, alumnos.direccion, alumnos.telefono
+         FROM alumnos
+         WHERE alumnos.codigo like "%'.$valor.'%" or alumnos.nombre like "%' .$valor. '%"
         ');
         return $this->respuesta = $this->db->obtener_datos();
     }
-    public function elimonarAlumno($idAlumno=''){
+    public function eliminarAlumno($idAlumno=''){
         $this->db->consultas('
         delete alumnos
         FROM alumnos
