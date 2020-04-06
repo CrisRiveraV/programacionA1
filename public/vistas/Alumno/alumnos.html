@@ -1,4 +1,4 @@
-<form data-accion="nuevo" data-idAlumno='' id="frm-alumnos" method="post">
+<form v-on:submit.prevent="guardarAlumno" data-accion="nuevo" data-idAlumno='' id="frm-alumnos" method="post">
     <div class="card text-white bg-dark mb-3" style="max-width: 24rem;">
         <div class="card-header">
             Mantenimineto Alummos
@@ -49,9 +49,11 @@
            </div> 
            <div class="rw p-2">
                <div class="col-12 text-center">
-                   <div id="respuestaAlumno"></div>
+                   <div id="alert alert-success" role="alert"></div>
+                   {{ alumno.msg }}
                </div>
            </div>
         </div>
     </div>
 </form>
+<script src ="public/vistas/Alumno/alumnos.js"></script>

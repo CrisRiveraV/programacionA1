@@ -1,17 +1,17 @@
 <?php
 include ('../../Config/Config.php');
-$alumno = new alumno($Conexion);
+$alumno = new alumno($conexion);
 
 $proceso ='';
 if( isset($_GET['proceso']) && strlen($_GET['proceso'])>0 ){
- $proceso =$_GET['proceso'];   
+        $proceso = $_GET['proceso'];   
 }
-$alumno->$proceso($_GET['alumno'] );
+$alumno->$proceso( $_GET['alumno'] );
 print_r(json_encode($alumno->respuesta));
 
 class alumno{
     private $datos = array(), $db;
-    public $respuesta =['msg'=>'correcto'];
+    public $respuesta = ['msg'=>'correcto'];
 
     public function __construct($db){
         $this->db=$db;

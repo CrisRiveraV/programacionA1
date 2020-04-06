@@ -1,28 +1,30 @@
-export function modulo(){ 
-     var $ = el = document.querySelector(el),
-        frmDocentes = $("#frmdocentes");
-    frmDocentes.addEventListener("submit",e=>{
-        e.preventDefault();
-        e.stopPropagation();
-
-       let docente = {
-            accion    : 'nuevo',
-            codigo    : $("#txtCodigoDocente").value,
-            nombre    : $("#txtNombreDocente").value,
-            nit       : $("#txtNITDocente").value,
-            direccion : $("#txtDireccionDocente").value,
-            telefono  :$("#txtTelefonoDocente").value
-        };
-        fetch(`private/Modulos/Docentes/procesos.php?proceso=rescibirDatos&docente=${JSON.stringify(docente)}`).then( resp=>resp.json() ).then(resp=>{
-             $("#respuestaDocente").innerHTML=`
-                <div class="alert alert-success" role="alert">
-                   ${resp.msg}
-                </div>
-            `;
-        });
-    });
-    frmDocentes.addEventListener("reset",e=>{
-       $("#frmdocentes").dataset.accion = 'nuevo';
-       $("#frmdocentes").dataset.idDocente = '';
-    });
-}
+var appdocente = new Vue({
+    el:'#frm-docentes',
+    data:{
+        docente:{
+            idDocente   : 0,
+            accion      : 'nuevo',
+            codigo      : '',
+            nombre      : '',
+            nit         : '',
+            direccion   : '',
+            telefono    : '',
+            msg         : ''
+        }
+    },
+    methods:{
+        guardarDocente:function(){
+            fetch(`private/Modulos/Docentes/procesos.php?proceso=recibirDatos&docente=${JSON.stringify(this.docente)}`).then( resp=>resp.json() ).then(resp=>{
+                this.docente.msg = resp.msg;
+                this.docente.idDocente = 0;
+                this.docente.codigo = '';
+                this.docente.nombre = '';
+                this.docente.nit = '';
+                this.docente.direccion = '';
+                this.docente.telefono = '';
+                this.docente.accion = '';
+                appBuscarDocente.buscarDocente();
+            });
+        }
+    }
+});

@@ -24,9 +24,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    <tr v-for="estudiante in misalumnos" :key="estudiante.idAlumno" v-on:click="modificarAlumno(esrudiante)">
+                        <td>{{ estudiante.codigo }}</td>
+                        <td>{{ estudiante.nombre }}</td>
+                        <td>{{ estudiante.direccion }}</td>
+                        <td>{{ estudiante.telefono }}</td>
+                        <td>
+                            <input v-on:click="eliminarAlumno(estudiante.idAlumno)" type="button" class="btn btn-outline-danger text-white" value="del">
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
     </div>
-</form>        
+</form> 
+<script src="public/vistas/Alumno/buscar-alumnos.js"></script>       
